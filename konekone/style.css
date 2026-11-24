@@ -1,0 +1,16 @@
+:root { --bg:#FAF8F3; --page:#EFEAE0; --ink:#24306B; --accent:#E3B04B; --btn:#24306B; --btntext:#FFFFFF; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } .float { transition:none; } }
+body { margin:0; background:var(--page); color:var(--ink); font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif; }
+.lp { max-width:560px; margin:0 auto; background:var(--bg); box-shadow:0 0 40px rgba(0,0,0,.08); }
+.part { position:relative; }
+.part img { display:block; width:100%; height:auto; }
+.hit { position:absolute; left:var(--x); top:var(--y); width:var(--w); height:var(--h); border-radius:8px; font-size:0; color:transparent; }
+.hit:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
+.hit:hover { box-shadow:0 0 0 3px var(--accent); }
+.note { margin:0; padding:16px 7%; font-size:13px; line-height:1.7; text-align:center; background:var(--bg); }
+.note:target { background:var(--accent); color:#111; font-weight:600; }
+.foot { padding:24px 7% 96px; font-size:12px; line-height:1.8; text-align:center; border-top:1px solid rgba(0,0,0,.08); opacity:.85; }
+.float { position:fixed; left:50%; bottom:calc(14px + env(safe-area-inset-bottom, 0px)); transform:translate(-50%,160%); width:min(92vw,520px); padding:14px 0; text-align:center; background:var(--btn); color:var(--btntext); font-weight:600; font-size:16px; border-radius:8px; text-decoration:none; box-shadow:0 6px 18px rgba(0,0,0,.25); transition:transform .35s ease; z-index:10; }
+.float.show { transform:translate(-50%,0); }
